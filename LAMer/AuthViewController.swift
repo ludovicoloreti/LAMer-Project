@@ -19,13 +19,14 @@ class AuthViewController: SecureViewController {
 		navigationController?.navigationBar.barTintColor = primaryColor
 		navigationController?.navigationBar.tintColor = UIColor.white;
 		self.navigationItem.titleView = UIViewController.setTitle(image: UIImageView(image: #imageLiteral(resourceName: "logo")))
+//		self.displaySpinner(onView: self.view)
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(true)
 		authenticationWithTouchID(completion: { (success) in
 			if success {
-				UIViewController.displaySpinner(onView: self.view)
+				
 				DispatchQueue.main.async {
 					self.performSegue(withIdentifier: "toAuthenticatedView", sender: self)
 				}

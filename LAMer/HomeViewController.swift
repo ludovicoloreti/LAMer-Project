@@ -42,7 +42,7 @@ class HomeViewController: SecureViewController, UITableViewDataSource {
 		let db = dbRef.child("items").child(uid).child("data")
 		db.observe(.value, with: { (snapshot) in
 			guard let itemData = snapshot.children.allObjects as? [DataSnapshot] else {return}
-			print(snapshot.key)
+//			print(snapshot.key)
 			if (snapshot.exists() == false) {
 				UIViewController.removeSpinner(spinner: sv)
 				Utils.showAlert(title: "Nessun Dato", msg: "Nessun dato presente nel Database di Firebase!", in: self)
@@ -73,7 +73,7 @@ class HomeViewController: SecureViewController, UITableViewDataSource {
 					self.items.append(item)
 				}
 				UIViewController.removeSpinner(spinner: sv)
-				print(self.items)
+//				print(self.items)
 				DispatchQueue.main.async {
 					self.content.reloadData()
 				}
@@ -92,6 +92,15 @@ class HomeViewController: SecureViewController, UITableViewDataSource {
 		cell.imgView.image = Utils.imageFromUrl(urlImg: items[indexPath.row].icon)
 		cell.imgView.image = cell.imgView.image?.imageWithInsets(insets: UIEdgeInsetsMake(10,10,10,10))
 		return cell
+	}
+	
+	// previene il fatto che dopo aver cliccato su una cella rimane "selezionata"
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		let selectedRow: IndexPath? = content.indexPathForSelectedRow
+		if let selectedRowNotNill = selectedRow {
+			content.deselectRow(at: selectedRowNotNill, animated: true)
+		}
 	}
 	
 	

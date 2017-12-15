@@ -22,6 +22,16 @@
 		<string>fb-messenger-api</string>
 		<string>fbauth2</string>
 		<string>fbshareextension</string>
+		<string>fb</string>
+		<string>instagram</string>
+		<string>paypal</string>
+		<string>twitter</string>
+		<string>linkedin</string>
+		<string>pinterest</string>
+		<string>snapchat</string>
+		<string>amzn</string>
+		<string>tumblr</string>
+		<string>ebay</string>
 	</array>
 	<!--   FINE STEP 4 FB SDK -->
 	<key>CFBundleDevelopmentRegion</key>

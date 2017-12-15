@@ -22,7 +22,7 @@ class AddItemViewController: SecureViewController,  UIPickerViewDataSource, UIPi
 	@IBOutlet weak var username: UITextField!
 	@IBOutlet weak var pickerTextField: UITextField!
 	
-	let arrayList = ["", "Altervista.org", "Amazon.it", "Asos.com", "Facebook.com", "ForumCommunity.net", "ForumFree.it", "Google.it", "Instagram.com", "Linkedin.com", "Libero.it", "Ebay.it", "Microsoft.it", "Netflix.com", "Paypal.com", "Pinterest.com", "Satispay.it", "Sky.it", "Skype.com", "Snapchat.com", "Tim.it", "Tre.it", "Tumblr.com", "Twitter.com", "Vodafone.it", "Yahoo.it", "Wind.it"]
+	let arrayList = ["", "Altervista.org", "Amazon.it", "Asos.com", "Facebook.com", "ForumCommunity.net", "ForumFree.it", "Google.it", "Instagram.com", "Linkedin.com", "Libero.it", "Ebay.com", "Microsoft.it", "Netflix.com", "Paypal.com", "Pinterest.com", "Satispay.it", "Sky.it", "Skype.com", "Snapchat.com", "Tim.it", "Tre.it", "Tumblr.com", "Twitter.com", "Vodafone.it", "Yahoo.it", "Wind.it"]
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -130,7 +130,8 @@ class AddItemViewController: SecureViewController,  UIPickerViewDataSource, UIPi
 			Utils.showAlert(title: "Errore", msg: "Compila tutti i campi!", in: self)
 			return
 		}
-		let icon = "https://icons.better-idea.org/icon?url=\(service.lowercased())&size=16..50..100&fallback_icon_color=E6AF00&fallback_icon_url=https://reactjs.org/favicon.ico"
+		let icon = "https://icons.better-idea.org/icon?url=\(service.lowercased())&size=16..50..100&fallback_icon_color=E6AF00"
+		// &fallback_icon_url=https://reactjs.org/favicon.ico
 		
 		// inserisco nel database sotto la collection ITEMS capitanato dall'UID dell'user
 		// l'username dell'utente

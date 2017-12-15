@@ -98,6 +98,21 @@ class Utils {
 		return decryptedString
 	}
 	
+	static func openApp(uri: String) -> Bool {
+		if #available(iOS 10.0, *) {
+			let url = NSURL(string:uri)! as URL
+			if UIApplication.shared.canOpenURL(url) {
+				UIApplication.shared.open(url)
+				return true
+			} else {
+				return false
+			}
+		} else {
+			return false
+		}
+	}
+	
+	
 }
 
 class TextField: UITextField {

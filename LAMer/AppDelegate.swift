@@ -25,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		// init Firebase!!!!!!! FIRE FIREEEEEEE
 		FirebaseApp.configure()
+		Database.database().isPersistenceEnabled = true
+
 		
 		// [[FBSDKApplicationDelegate sharedInstance] application:application
 		// didFinishLaunchingWithOptions:launchOptions];

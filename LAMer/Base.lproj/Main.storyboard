@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -835,11 +834,30 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tub-n8-OlG">
                                                 <rect key="frame" x="0.0" y="240" width="414" height="421"/>
                                                 <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="lzc-s6-9dV">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="291"/>
+                                                        <subviews>
+                                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9HK-2i-ezY">
+                                                                <rect key="frame" x="0.0" y="221" width="0.0" height="60"/>
+                                                                <color key="backgroundColor" red="0.41960784309999999" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="op5-mZ-bmH"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                                <state key="normal" title="APRI APP">
+                                                                    <color key="titleColor" red="0.90196078430000004" green="0.68627450980000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="openAppHandler:" destination="uyf-Vz-dfO" eventType="touchUpInside" id="Cvi-5e-E81"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="xZP-YL-f7R" userLabel="StackView DeleteBtn">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="351"/>
+                                                        <rect key="frame" x="0.0" y="291" width="414" height="60"/>
                                                         <subviews>
                                                             <button contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0GT-J4-RQm">
-                                                                <rect key="frame" x="0.0" y="291" width="414" height="60"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                                                 <color key="backgroundColor" red="0.41960784309999999" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="60" id="yZG-gM-XD0"/>
@@ -876,8 +894,12 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="cq5-Qa-i44" firstAttribute="top" secondItem="0GT-J4-RQm" secondAttribute="bottom" constant="10" id="8Fe-39-ipG"/>
+                                                    <constraint firstItem="lzc-s6-9dV" firstAttribute="top" secondItem="tub-n8-OlG" secondAttribute="top" id="8Ft-kA-UHe"/>
                                                     <constraint firstAttribute="trailing" secondItem="xZP-YL-f7R" secondAttribute="trailing" id="Hy0-ix-TBO"/>
-                                                    <constraint firstItem="xZP-YL-f7R" firstAttribute="top" secondItem="tub-n8-OlG" secondAttribute="top" id="X4g-pV-p5H"/>
+                                                    <constraint firstItem="lzc-s6-9dV" firstAttribute="leading" secondItem="tub-n8-OlG" secondAttribute="leading" id="IOm-jU-aIy"/>
+                                                    <constraint firstItem="xZP-YL-f7R" firstAttribute="top" secondItem="lzc-s6-9dV" secondAttribute="bottom" id="Toq-yX-IUl"/>
+                                                    <constraint firstItem="0GT-J4-RQm" firstAttribute="top" secondItem="9HK-2i-ezY" secondAttribute="bottom" constant="10" id="Wwd-AN-xIc"/>
+                                                    <constraint firstAttribute="trailing" secondItem="lzc-s6-9dV" secondAttribute="trailing" id="nEa-be-8k2"/>
                                                     <constraint firstItem="xZP-YL-f7R" firstAttribute="leading" secondItem="tub-n8-OlG" secondAttribute="leading" id="vq9-Ub-y7f"/>
                                                 </constraints>
                                             </stackView>
@@ -919,6 +941,7 @@
                         <outlet property="deleteBtn" destination="0GT-J4-RQm" id="J3X-Pe-7Fi"/>
                         <outlet property="iconImage" destination="Qri-DD-aD4" id="3xD-LH-rsx"/>
                         <outlet property="myGradientView" destination="MLC-LO-Ncm" id="5px-MH-CfJ"/>
+                        <outlet property="openAppBtn" destination="9HK-2i-ezY" id="B7o-aC-yFi"/>
                         <outlet property="passwordLbl" destination="U2b-cp-mYB" id="XpM-XS-WvK"/>
                         <outlet property="pwdLbl" destination="Uox-7n-BeQ" id="82A-co-4Wg"/>
                         <outlet property="serviceLbl" destination="Zu9-Dr-GPl" id="dYc-3q-EIr"/>
